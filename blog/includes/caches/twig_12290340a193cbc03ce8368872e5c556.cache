@@ -1,0 +1,180 @@
+<?php
+$this->requireTemplate("layout.twig");
+class __TwigTemplate_12290340a193cbc03ce8368872e5c556 extends __TwigTemplate_d8fb9d03f55738ff78518e1bc2741faf {
+/* LINE:3 */
+public function block_title($context) {
+$context['::superblock'] = array($this, 'parent::block_title');
+echo twig_translate_string_filter("Modules");
+}
+
+/* LINE:5 */
+public function block_content($context) {
+$context['::superblock'] = array($this, 'parent::block_content');
+echo "\n\t\t\t<h1>";
+/* LINE:6 */
+echo twig_translate_string_filter("Modules");
+echo "</h1>\n\t\t\t<div class=\"enable module left\">\n\t\t\t\t<h2>";
+/* LINE:8 */
+echo twig_translate_string_filter("Enabled");
+echo "</h2>\n\t\t\t\t<ul class=\"extend\">\n";
+/* LINE:10 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_array_items_filter((isset($context['enabled_modules']) ? $context['enabled_modules'] : NULL))) as $iterator) {
+twig_set_loop_context_multitarget($context, $iterator, array("safename", "module"));
+echo "\n\t\t\t\t\t<li class=\"";
+/* LINE:11 */
+echo twig_join_filter(twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "classes"), " ");
+echo "\" id=\"module_";
+echo (isset($context['safename']) ? $context['safename'] : NULL);
+echo "\">\n\t\t\t\t\t\t<a class=\"";
+/* LINE:12 */
+echo (isset($context['safename']) ? $context['safename'] : NULL);
+echo " info_link\" href=\"javascript:void(0)\"><img src=\"images/icons/info.png\" class=\"info right\" /></a>\n\t\t\t\t\t\t";
+/* LINE:13 */
+if (twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "help")) {
+echo "\n\t\t\t\t\t\t<a href=\"";
+/* LINE:14 */
+echo fix(Config::current()->chyrp_url."/admin/?action=".(("help&id=") . (twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "help"))));
+echo "\" class=\"help emblem\"><img src=\"images/icons/help.png\" alt=\"help\" /></a>\n\t\t\t\t\t\t";
+}
+/* LINE:15 */
+echo "\n\t\t\t\t\t\t";
+/* LINE:16 */
+echo sprintf(twig_translate_string_filter("<a href=\"%s\">%s</a> v%s <span class=\"sub\">by %s</span>"), twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "url"), twig_translate_string_filter(twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "name"), (isset($context['safename']) ? $context['safename'] : NULL)), twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "version"), twig_get_attribute(twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "author"), "link"));
+echo "\n\t\t\t\t\t\t<div class=\"expand\">\n\t\t\t\t\t\t\t<div class=\"description";
+/* LINE:18 */
+if (twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "dependencies_needed")) {
+echo " expanded";
+}
+echo "\">\n\t\t\t\t\t\t\t\t";
+/* LINE:19 */
+echo twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "description");
+echo " ";
+echo "\n\n\t\t\t\t\t\t\t\t<p class=\"dependencies_message\"";
+/* LINE:21 */
+if ((!twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "dependencies_needed"))) {
+echo " style=\"display: none\"";
+}
+echo ">\n\t\t\t\t\t\t\t\t\t";
+/* LINE:22 */
+echo twig_translate_string_filter("This Module requires the following Modules to be enabled:");
+echo "\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t<ul class=\"dependencies_list\"";
+/* LINE:24 */
+if ((!twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "dependencies_needed"))) {
+echo " style=\"display: none\"";
+}
+echo ">\n\t\t\t\t\t\t\t\t\t";
+/* LINE:25 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "dependencies_needed")) as $iterator) {
+twig_set_loop_context($context, $iterator, "dependency");
+echo "\n\t\t\t\t\t\t\t\t\t<li class=\"";
+/* LINE:26 */
+echo (isset($context['dependency']) ? $context['dependency'] : NULL);
+echo "\">";
+echo (isset($context['dependency']) ? $context['dependency'] : NULL);
+echo "</li>\n\t\t\t\t\t\t\t\t\t";
+}
+$context = $context['::parent'];
+/* LINE:27 */
+echo "\n\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t";
+/* LINE:30 */
+if ((!twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "dependencies_needed"))) {
+echo "\n\t\t\t\t\t\t\t<noscript><a class=\"enable_button\" href=\"";
+/* LINE:31 */
+echo fix(Config::current()->chyrp_url."/admin/?action=".(("disable&module=") . ((isset($context['safename']) ? $context['safename'] : NULL))));
+echo "\">";
+echo twig_translate_string_filter("Disable");
+echo "</a></noscript>\n\t\t\t\t\t\t\t";
+}
+/* LINE:32 */
+echo "\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</li>\n";
+}
+$context = $context['::parent'];
+/* LINE:35 */
+echo "\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<div class=\"disable module right\">\n\t\t\t\t<h2>";
+/* LINE:39 */
+echo twig_translate_string_filter("Disabled");
+echo "</h2>\n\t\t\t\t<ul class=\"extend\">\n";
+/* LINE:41 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_array_items_filter((isset($context['disabled_modules']) ? $context['disabled_modules'] : NULL))) as $iterator) {
+twig_set_loop_context_multitarget($context, $iterator, array("safename", "module"));
+echo "\n\t\t\t\t\t<li class=\"";
+/* LINE:42 */
+echo twig_join_filter(twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "classes"), " ");
+echo "\" id=\"module_";
+echo (isset($context['safename']) ? $context['safename'] : NULL);
+echo "\">\n\t\t\t\t\t\t<a class=\"";
+/* LINE:43 */
+echo (isset($context['safename']) ? $context['safename'] : NULL);
+echo " info_link\" href=\"javascript:void(0)\"><img src=\"images/icons/info.png\" class=\"info right\" /></a>\n\t\t\t\t\t\t";
+/* LINE:44 */
+if (twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "help")) {
+echo "\n\t\t\t\t\t\t<a href=\"";
+/* LINE:45 */
+echo fix(Config::current()->chyrp_url."/admin/?action=".(("help&id=") . (twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "help"))));
+echo "\" class=\"help emblem\"><img src=\"images/icons/help.png\" alt=\"help\" /></a>\n\t\t\t\t\t\t";
+}
+/* LINE:46 */
+echo "\n\t\t\t\t\t\t";
+/* LINE:47 */
+echo sprintf(twig_translate_string_filter("<a href=\"%s\">%s</a> v%s <span class=\"sub\">by %s</span>"), twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "url"), twig_translate_string_filter(twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "name"), (isset($context['safename']) ? $context['safename'] : NULL)), twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "version"), twig_get_attribute(twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "author"), "link"));
+echo "\n\t\t\t\t\t\t<div class=\"expand\">\n\t\t\t\t\t\t\t<div class=\"description";
+/* LINE:49 */
+if (twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "dependencies_needed")) {
+echo " expanded";
+}
+echo "\">\n\t\t\t\t\t\t\t\t";
+/* LINE:50 */
+echo twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "description");
+echo " ";
+echo "\n\n\t\t\t\t\t\t\t\t<p class=\"dependencies_message\"";
+/* LINE:52 */
+if ((!twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "dependencies_needed"))) {
+echo " style=\"display: none\"";
+}
+echo ">\n\t\t\t\t\t\t\t\t\t";
+/* LINE:53 */
+echo twig_translate_string_filter("This Module requires the following Modules to be enabled:");
+echo "\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t<ul class=\"dependencies_list\"";
+/* LINE:55 */
+if ((!twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "dependencies_needed"))) {
+echo " style=\"display: none\"";
+}
+echo ">\n\t\t\t\t\t\t\t\t\t";
+/* LINE:56 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "dependencies_needed")) as $iterator) {
+twig_set_loop_context($context, $iterator, "dependency");
+echo "\n\t\t\t\t\t\t\t\t\t<li class=\"";
+/* LINE:57 */
+echo (isset($context['dependency']) ? $context['dependency'] : NULL);
+echo "\">";
+echo (isset($context['dependency']) ? $context['dependency'] : NULL);
+echo "</li>\n\t\t\t\t\t\t\t\t\t";
+}
+$context = $context['::parent'];
+/* LINE:58 */
+echo "\n\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t";
+/* LINE:61 */
+if ((!twig_get_attribute((isset($context['module']) ? $context['module'] : NULL), "dependencies_needed"))) {
+echo "\n\t\t\t\t\t\t\t<noscript><a class=\"disable_button\" href=\"";
+/* LINE:62 */
+echo fix(Config::current()->chyrp_url."/admin/?action=".(("enable&module=") . ((isset($context['safename']) ? $context['safename'] : NULL))));
+echo "\">";
+echo twig_translate_string_filter("Enable");
+echo "</a></noscript>\n\t\t\t\t\t\t\t";
+}
+/* LINE:63 */
+echo "\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</li>\n";
+}
+$context = $context['::parent'];
+/* LINE:66 */
+echo "\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<div class=\"clear\"></div>\n\t\t\t<br />\n\t\t\t<a class=\"button right\" href=\"http://chyrp.net/extend/browse/modules\">";
+/* LINE:71 */
+echo twig_translate_string_filter("Get More Modules &rsaquo;");
+echo "</a>\n";
+}
+
+}

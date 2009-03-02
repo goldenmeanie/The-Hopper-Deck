@@ -1,0 +1,31 @@
+<?php
+$this->requireTemplate("layouts/default.twig");
+class __TwigTemplate_074b95bd8ccd59da245011cea0f850fa extends __TwigTemplate_c19a24ba4c4f488924cc287729ac8d39 {
+/* LINE:2 */
+public function block_content($context) {
+$context['::superblock'] = array($this, 'parent::block_content');
+echo "\n";
+/* LINE:3 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_attribute((isset($context['posts']) ? $context['posts'] : NULL), "paginated")) as $iterator) {
+twig_set_loop_context($context, $iterator, "post");
+echo "\n";
+/* LINE:4 */
+twig_get_current_template()->loader->getTemplate((("feathers/") . (twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "feather"))) . (".twig"))->display($context);
+echo "\n";
+}
+if (!$context['loop']['iterated']) {
+/* LINE:5 */
+echo "\n\t\t\t\t\t<h1>";
+/* LINE:6 */
+echo twig_translate_string_filter("No Posts");
+echo "</h1>\n\t\t\t\t\t<p>";
+/* LINE:7 */
+echo twig_translate_string_filter("Nothing here yet!");
+echo "</p>\n";
+}$context = $context['::parent'];
+/* LINE:8 */
+echo "\n";
+}
+
+}

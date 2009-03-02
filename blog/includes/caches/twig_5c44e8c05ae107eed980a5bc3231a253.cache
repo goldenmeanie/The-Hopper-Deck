@@ -1,0 +1,34 @@
+<?php
+$this->requireTemplate("layout.twig");
+class __TwigTemplate_5c44e8c05ae107eed980a5bc3231a253 extends __TwigTemplate_d8fb9d03f55738ff78518e1bc2741faf {
+/* LINE:3 */
+public function block_title($context) {
+$context['::superblock'] = array($this, 'parent::block_title');
+echo sprintf(twig_translate_string_filter("Edit &#8220;%s&#8221;"), fix(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "title")));
+}
+
+/* LINE:5 */
+public function block_content($context) {
+$context['::superblock'] = array($this, 'parent::block_content');
+echo "\n\t\t\t<h1>";
+/* LINE:6 */
+echo sprintf(twig_translate_string_filter("Editing &#8220;%s&#8221;"), fix(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "title")));
+echo "</h1>\n\t\t\t<form id=\"edit_form\" action=\"";
+/* LINE:7 */
+echo fix(Config::current()->chyrp_url."/admin/?action=".("update_post"));
+echo "\" method=\"post\" accept-charset=\"utf-8\" enctype=\"multipart/form-data\">\n\t\t\t\t<fieldset>\n";
+/* LINE:9 */
+twig_get_current_template()->loader->getTemplate("partials/post_fields.twig")->display($context);
+echo "\n\n\t\t\t\t\t<input type=\"hidden\" name=\"id\" value=\"";
+/* LINE:11 */
+echo twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "id");
+echo "\" id=\"id\" />\n\t\t\t\t\t<input type=\"hidden\" name=\"feather\" value=\"";
+/* LINE:12 */
+echo fix(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "feather"));
+echo "\" id=\"feather\" />\n\t\t\t\t\t<input type=\"hidden\" name=\"hash\" value=\"";
+/* LINE:13 */
+echo twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "secure_hashkey");
+echo "\" id=\"hash\" />\n\t\t\t\t</fieldset>\n\t\t\t</form>\n";
+}
+
+}

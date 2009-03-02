@@ -1,0 +1,135 @@
+<?php
+$this->requireTemplate("layouts/default.twig");
+class __TwigTemplate_61deb32ffa3df7f4df4fe2a10fb6f979 extends __TwigTemplate_c19a24ba4c4f488924cc287729ac8d39 {
+/* LINE:2 */
+public function block_content($context) {
+$context['::superblock'] = array($this, 'parent::block_content');
+echo "\n";
+/* LINE:3 */
+if ((isset($context['archives']) ? $context['archives'] : NULL)) {
+echo " ";
+echo "\n";
+/* LINE:4 */
+if (twig_get_attribute((isset($context['GET']) ? $context['GET'] : NULL), "year") != ($tmp1 = (isset($context['null']) ? $context['null'] : NULL))) {
+echo "\n\t";
+/* LINE:5 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, (isset($context['archives']) ? $context['archives'] : NULL)) as $iterator) {
+twig_set_loop_context($context, $iterator, "archive");
+echo "\n\t<h1>";
+/* LINE:6 */
+echo sprintf(twig_translate_string_filter("Archive of %s"), twig_get_attribute((isset($context['archive']) ? $context['archive'] : NULL), "year"));
+echo "</h1>\n\t";
+}
+$context = $context['::parent'];
+/* LINE:7 */
+echo "\n";
+} else {
+/* LINE:8 */
+echo "\n\t<h1>";
+/* LINE:9 */
+echo twig_translate_string_filter("Archives");
+echo "</h1>\n";
+}
+/* LINE:10 */
+echo "\n\t";
+/* LINE:11 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, (isset($context['archives']) ? $context['archives'] : NULL)) as $iterator) {
+twig_set_loop_context($context, $iterator, "archive");
+echo "\n\t";
+/* LINE:12 */
+if (twig_get_attribute((isset($context['GET']) ? $context['GET'] : NULL), "year") != ($tmp1 = (isset($context['null']) ? $context['null'] : NULL))) {
+echo "\n\t<h2><a href=\"";
+/* LINE:13 */
+echo twig_get_attribute((isset($context['archive']) ? $context['archive'] : NULL), "url");
+echo "\">";
+echo twig_strftime_format_filter(twig_get_attribute((isset($context['archive']) ? $context['archive'] : NULL), "timestamp"), twig_translate_string_filter("%B"));
+echo "</a></h2>\n\t";
+} else {
+/* LINE:14 */
+echo "\n\t<h2><a href=\"";
+/* LINE:15 */
+echo twig_get_attribute((isset($context['archive']) ? $context['archive'] : NULL), "url");
+echo "\">";
+echo twig_strftime_format_filter(twig_get_attribute((isset($context['archive']) ? $context['archive'] : NULL), "timestamp"), twig_translate_string_filter("%B %Y"));
+echo "</a></h2>\n\t";
+}
+/* LINE:16 */
+echo "\n\t<ul>\n\t\t";
+/* LINE:18 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_attribute((isset($context['archive']) ? $context['archive'] : NULL), "posts")) as $iterator) {
+twig_set_loop_context($context, $iterator, "post");
+echo "\n\t\t<li>";
+/* LINE:19 */
+echo twig_strftime_format_filter(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "created_at"), twig_translate_string_filter("%d"));
+echo ": <a href=\"";
+echo twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "url");
+echo "\">";
+echo truncate(normalize(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "title")), 70);
+echo "</a></li>\n\t\t";
+}
+$context = $context['::parent'];
+/* LINE:20 */
+echo "\n\t</ul>\n\t<br />\n\t";
+}
+$context = $context['::parent'];
+/* LINE:23 */
+echo "\n";
+}
+/* LINE:24 */
+echo "\n\n";
+/* LINE:26 */
+if (twig_get_attribute((isset($context['posts']) ? $context['posts'] : NULL), "paginated")) {
+echo " ";
+echo "\n\t";
+/* LINE:27 */
+if (twig_get_attribute((isset($context['archive']) ? $context['archive'] : NULL), "depth") == ($tmp1 = "day")) {
+echo "\n\t<h1>";
+/* LINE:28 */
+echo sprintf(twig_translate_string_filter("Archive of %s"), twig_strftime_format_filter(twig_get_attribute((isset($context['archive']) ? $context['archive'] : NULL), "timestamp"), twig_translate_string_filter("%B %e, %Y")));
+echo "</h1>\n\t";
+}
+/* LINE:29 */
+echo "\n\t";
+/* LINE:30 */
+if (twig_get_attribute((isset($context['archive']) ? $context['archive'] : NULL), "depth") == ($tmp1 = "month")) {
+echo "\n\t<h1>";
+/* LINE:31 */
+echo sprintf(twig_translate_string_filter("Archive of %s"), twig_strftime_format_filter(twig_get_attribute((isset($context['archive']) ? $context['archive'] : NULL), "timestamp"), twig_translate_string_filter("%B %Y")));
+echo "</h1>\n\t";
+}
+/* LINE:32 */
+echo "\n\t";
+/* LINE:33 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_attribute((isset($context['posts']) ? $context['posts'] : NULL), "paginated")) as $iterator) {
+twig_set_loop_context($context, $iterator, "post");
+echo "\n\t";
+/* LINE:34 */
+twig_get_current_template()->loader->getTemplate((("feathers/") . (twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "feather"))) . (".twig"))->display($context);
+echo "\n\t";
+}
+$context = $context['::parent'];
+/* LINE:35 */
+echo "\n";
+}
+/* LINE:36 */
+echo "\n\n";
+/* LINE:38 */
+if (((!(isset($context['archives']) ? $context['archives'] : NULL))) && ((!twig_get_attribute((isset($context['posts']) ? $context['posts'] : NULL), "paginated")))) {
+echo " ";
+echo "\n\t\t\t\t\t<h2>";
+/* LINE:39 */
+echo twig_translate_string_filter("No Posts");
+echo "</h2>\n\t\t\t\t\t<p>";
+/* LINE:40 */
+echo twig_translate_string_filter("There don't seem to be any posts in the timeframe you specified.");
+echo "</p>\n";
+}
+/* LINE:41 */
+echo "\n";
+}
+
+}

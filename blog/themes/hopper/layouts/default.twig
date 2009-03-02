@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head profile="http://gmpg.org/xfn/11">
+		<meta http-equiv="Content-type" content="$theme.type; charset=utf-8" />
+		<title>{% block title %}$site.name{% if title %} &raquo; ${ title | escape }{% endif %}{% endblock %}</title>
+		<meta name="generator" content="Chyrp" />
+		<link rel="pingback" href="$site.chyrp_url/includes/xmlrpc.php" />
+		<link rel="EditURI" type="application/rsd+xml" href="$site.chyrp_url/includes/rsd.php" />
+		$theme.feeds
+		$theme.stylesheets
+		<link rel="stylesheet" href="/../css/base.css" type="text/css" media="screen" charset="utf-8" />
+		$theme.javascripts
+${ trigger.call("head") }
+	</head>
+	<body id="blog">
+{% if visitor.group.can("add_post", "add_draft", "add_page", "view_own_draft", "view_draft", "change_settings", "toggle_extensions") %}
+		<div id="controls" {% if hide_admin %} style="display: none"{% endif %}>
+			<ul>
+{% if visitor.group.can("add_post") %}
+				<li><a id="add_post" href="{% admin "write_post" %}">${ "Write" | translate }</a></li>
+{% elseif visitor.group.can("add_draft") %}
+				<li><a id="add_draft" href="{% admin "write_post" %}">${ "Write Draft" | translate }</a></li>
+{% endif %}
+{% if visitor.group.can("add_page") %}
+				<li><a id="add_page" href="{% admin "write_page" %}">${ "Add Page" | translate }</a></li>
+{% endif %}
+{% if visitor.group.can("view_own_draft", "view_draft") %}
+				<li><a id="your_drafts" href="{% url "drafts/" %}">${ "Your Drafts" | translate }</a></li>
+{% endif %}
+{% if visitor.group.can("change_settings", "toggle_extensions") %}
+				<li><a id="site_settings" href="$site.chyrp_url/admin/">${ "Admin" | translate }</a></li>
+{% endif %}
+				<li class="close"><a class="toggle_admin" href="{% url "toggle_admin/" %}">${ "Close" | translate }</a></li>
+			</ul>
+		</div>
+{% endif %}
+		<div id="bigbox">
+			<div id="branding">
+				<h1>The Hopper Deck <span>1.0</span></h1>
+			</div>
+			<div id="nav">
+				<ul>
+					<li class="home"><a href="/">Home</a></li>
+					<li class="team"><a href="/team/">Team</a></li>
+					<li class="order"><a href="/order/">Ordering</a></li>
+					<li class="blog"><a href="/blog/">Blog</a></li>
+				</ul>
+				
+			</div>
+			
+			<div id="alpha">
+				{% for type, messages in flash.all | items %}
+					{% for message in messages %}
+				<div class="${ type | depluralize }">$message</div>
+					{% endfor %}
+				{% endfor %}
+				{% block content %}{% endblock %}
+				<div class="clear"></div>
+				$posts.prev_link
+				$posts.next_link
+				{% if posts.paginated and posts.pages > 1 %}
+					<span class="pages">Page $posts.page of $posts.pages</span>
+				{% endif %}
+				
+			</div>
+			<!-- <div id="bravo"> -->
+				{% include "content/sidebar.twig" %}
+			<!-- </div> -->
+			<div id="footer">
+					<!-- <p>Stardust theme &copy; 2008 <a href="http://lofisoami.com">Aaron MacDonald</a></p> -->
+					<!-- <p>${ "Powered by <a class=\"chyrp\" href=\"http://chyrp.net/\">Chyrp</a>" | translate }</p> -->
+					<!-- <a class="atom" href="{% url "feed/" %}">atom</a> -->
+			</div>
+		</div>
+		
+{# if debug %}
+		<script type="text/javascript">
+{% for debug in sql_debug %}
+			console.log("$debug.number: ${ debug.query | quotes | strip } (Called from $debug.file on line $debug.line\.)")
+{% endfor %}
+			console.log("Total: $sql_queries")
+		</script>
+{% endif #}
+${ trigger.call("end_content") }
+		<!-- Queries: $sql_queries | Load Time: $theme.load_time -->
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		var pageTracker = _gat._getTracker("UA-462748-12");
+		pageTracker._trackPageview();
+		</script>
+	</body>
+</html>

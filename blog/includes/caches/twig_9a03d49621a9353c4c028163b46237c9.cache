@@ -1,0 +1,124 @@
+<?php
+class __TwigTemplate_9a03d49621a9353c4c028163b46237c9 {
+public function render($context) {
+/* LINE:1 */
+echo "\t\t\t\t\t";
+if (twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "first_of_day")) {
+echo "\n\t\t\t\t\t<div class=\"date\">";
+/* LINE:2 */
+echo twig_strftime_format_filter(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "created_at"), twig_translate_string_filter("%B %e"));
+echo "</div>\n\t\t\t\t\t";
+}
+/* LINE:3 */
+echo "\n\t\t\t\t\t<div class=\"post ";
+/* LINE:4 */
+echo twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "feather");
+if (twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "pinned")) {
+echo " pinned";
+}
+echo "\" id=\"post_";
+echo twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "id");
+echo "\">\n\t\t\t\t\t\t";
+/* LINE:5 */
+if (twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "pinned")) {
+echo "<span class=\"pinned_text\">";
+echo twig_translate_string_filter("!");
+echo "</span>";
+}
+echo "\n\t\t\t\t\t\t";
+/* LINE:6 */
+$this->block_content($context);
+echo "\n\t\t\t\t\t\t";
+/* LINE:7 */
+if (twig_get_attribute((isset($context['route']) ? $context['route'] : NULL), "action") == ($tmp1 = "view")) {
+echo "\n\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t\t";
+/* LINE:9 */
+echo twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "paginated"), "prev_link");
+echo "\n\t\t\t\t\t\t";
+/* LINE:10 */
+echo twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "paginated"), "next_link");
+echo "\n\t\t\t\t\t\t";
+/* LINE:11 */
+if ((twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "paginated")) && (twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "paginated"), "pages") > ($tmp1 = 1))) {
+echo "\n\t\t\t\t\t\t<span class=\"pages\">Page ";
+/* LINE:12 */
+echo twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "paginated"), "page");
+echo " of ";
+echo twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "paginated"), "pages");
+echo "</span>\n\t\t\t\t\t\t";
+}
+/* LINE:13 */
+echo "\n\t\t\t\t\t\t";
+}
+/* LINE:14 */
+echo "\n\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t\t<span class=\"info\">\n\t\t\t\t\t\t\t";
+/* LINE:17 */
+if (twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "pinned")) {
+echo "\n\t\t\t\t\t\t\t<strong><a href=\"";
+/* LINE:18 */
+echo twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "url");
+echo "\">";
+echo twig_strftime_format_filter(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "created_at"), twig_translate_string_filter("%B %e @ %I:%M %p"));
+echo "</a></strong>\n\t\t\t\t\t\t\t";
+} else {
+/* LINE:19 */
+echo "\n\t\t\t\t\t\t\t<strong><a href=\"";
+/* LINE:20 */
+echo twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "url");
+echo "\">";
+echo twig_strftime_format_filter(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "created_at"), twig_translate_string_filter("%I:%M %p"));
+echo "</a></strong>\n\t\t\t\t\t\t\t";
+}
+/* LINE:21 */
+echo "\n\t\t\t\t\t\t\t";
+/* LINE:22 */
+if ((twig_get_attribute((isset($context['enabled_modules']) ? $context['enabled_modules'] : NULL), "categorize")) && (twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "category"), "id") != ($tmp1 = 0))) {
+echo "\n\t\t\t\t\t\t\t|\n\t\t\t\t\t\t\t<a href=\"";
+/* LINE:24 */
+echo twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "category"), "url");
+echo "\" rel=\"tag\">";
+echo twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "category"), "name");
+echo "</a>\n\t\t\t\t\t\t\t";
+}
+/* LINE:25 */
+echo "\n\t\t\t\t\t\t\t";
+/* LINE:26 */
+if (twig_get_attribute((isset($context['enabled_modules']) ? $context['enabled_modules'] : NULL), "comments")) {
+echo "\n\t\t\t\t\t\t\t|\n\t\t\t\t\t\t\t<a href=\"";
+/* LINE:28 */
+echo twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "url");
+echo "#comments\">";
+echo sprintf(twig_translate_plural_string_filter("%s Comment", "%s Comments", twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "comment_count")), twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "comment_count"));
+echo "</a>\n\t\t\t\t\t\t\t";
+}
+/* LINE:29 */
+echo "\n\t\t\t\t\t\t\t";
+/* LINE:30 */
+if (count(twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "tags"), "linked")) > ($tmp1 = 0)) {
+echo "\n\t\t\t\t\t\t\t|\n\t\t\t\t\t\t\t";
+/* LINE:32 */
+echo twig_translate_string_filter("Tags");
+echo ": ";
+echo twig_join_filter(twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "tags"), "linked"));
+echo "\n\t\t\t\t\t\t\t";
+}
+/* LINE:33 */
+echo "\n\t\t\t\t\t\t</span>\n";
+/* LINE:35 */
+if (call_user_func(array(twig_get_attribute((isset($context['visitor']) ? $context['visitor'] : NULL), "group"), "can"), "edit_post", "delete_post")) {
+echo "\n\t\t\t\t\t\t<span class=\"controls\">\n\t\t\t\t\t\t\t";
+/* LINE:37 */
+echo twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "edit_link");
+echo "\n\t\t\t\t\t\t\t";
+/* LINE:38 */
+echo call_user_func(array((isset($context['post']) ? $context['post'] : NULL), "delete_link"), twig_translate_string_filter("Delete"), " | ");
+echo "\n\t\t\t\t\t\t</span>\n";
+}
+/* LINE:40 */
+echo "\n\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t</div>";
+}
+/* LINE:6 */
+public function block_content($context) {
+}
+
+}

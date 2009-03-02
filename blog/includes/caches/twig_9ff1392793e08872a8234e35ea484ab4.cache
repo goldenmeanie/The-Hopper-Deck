@@ -1,0 +1,87 @@
+<?php
+class __TwigTemplate_9ff1392793e08872a8234e35ea484ab4 {
+public function render($context) {
+/* LINE:1 */
+echo "\t\t\t\t\t";
+echo call_user_func(array((isset($context['trigger']) ? $context['trigger'] : NULL), "call"), "before_page_fields");
+echo "\n\t\t\t\t\t<p>\n\t\t\t\t\t\t<label for=\"title\">";
+/* LINE:3 */
+echo twig_translate_string_filter("Title");
+echo "</label>\n\t\t\t\t\t\t<input class=\"text\" type=\"text\" name=\"title\" value=\"";
+/* LINE:4 */
+echo fix(twig_get_attribute((isset($context['page']) ? $context['page'] : NULL), "title"));
+echo "\" id=\"title\" />\n\t\t\t\t\t</p>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t<label for=\"body\">";
+/* LINE:7 */
+echo twig_translate_string_filter("Body");
+echo "</label>\n\t\t\t\t\t\t<textarea class=\"wide preview_me\" rows=\"12\" name=\"body\" id=\"body\" cols=\"50\">";
+/* LINE:8 */
+echo fix(twig_get_attribute((isset($context['page']) ? $context['page'] : NULL), "body"));
+echo "</textarea>\n\t\t\t\t\t</p>\n\t\t\t\t\t";
+/* LINE:10 */
+echo call_user_func(array((isset($context['trigger']) ? $context['trigger'] : NULL), "call"), "after_page_fields");
+echo "\n\n\t\t\t\t\t<div class=\"buttons\">\n\t\t\t\t\t\t<button type=\"submit\" class=\"yay right\" accesskey=\"s\">\n\t\t\t\t\t\t\t";
+/* LINE:14 */
+if (twig_get_attribute((isset($context['route']) ? $context['route'] : NULL), "action") == ($tmp1 = "write_page")) {
+echo "\n\t\t\t\t\t\t\t<img src=\"images/icons/success.png\" alt=\"success\" />";
+/* LINE:15 */
+echo twig_translate_string_filter("Publish");
+echo "\n\t\t\t\t\t\t\t";
+} else {
+/* LINE:16 */
+echo "\n\t\t\t\t\t\t\t<img src=\"images/icons/success.png\" alt=\"success\" />";
+/* LINE:17 */
+echo twig_translate_string_filter("Save");
+echo "\n\t\t\t\t\t\t\t";
+}
+/* LINE:18 */
+echo "\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t<noscript><br /></noscript>\n\t\t\t\t\t<div id=\"more_options\" class=\"more_options js_disabled\">\n\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t<label for=\"show_in_list\">";
+/* LINE:26 */
+echo twig_translate_string_filter("Show in pages list?");
+echo "</label>\n\t\t\t\t\t\t\t<input type=\"checkbox\" name=\"show_in_list\" id=\"show_in_list\" tabindex=\"3\"";
+/* LINE:27 */
+if ((twig_get_attribute((isset($context['page']) ? $context['page'] : NULL), "show_in_list")) || (twig_get_attribute((isset($context['route']) ? $context['route'] : NULL), "action") == ($tmp1 = "write_page"))) {
+echo " checked=\"checked\"";
+}
+echo " />&nbsp;\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t<label for=\"slug\">";
+/* LINE:30 */
+echo twig_translate_string_filter("Slug");
+echo "</label>\n\t\t\t\t\t\t\t<input class=\"text\" type=\"text\" name=\"slug\" value=\"";
+/* LINE:31 */
+echo fix(twig_get_attribute((isset($context['page']) ? $context['page'] : NULL), "slug"));
+echo "\" id=\"slug\" />\n\t\t\t\t\t\t</p>\n\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t<label for=\"parent_id\">";
+/* LINE:34 */
+echo twig_translate_string_filter("Parent");
+echo "</label>\n\t\t\t\t\t\t\t<select name=\"parent_id\" id=\"parent_id\">\n\t\t\t\t\t\t\t\t<option value=\"0\">----------</option>\n\t\t\t\t\t\t\t\t";
+/* LINE:37 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, (isset($context['pages']) ? $context['pages'] : NULL)) as $iterator) {
+twig_set_loop_context($context, $iterator, "parent");
+echo "\n\t\t\t\t\t\t\t\t<option value=\"";
+/* LINE:38 */
+echo twig_get_attribute((isset($context['parent']) ? $context['parent'] : NULL), "id");
+echo "\"";
+echo twig_option_selected_filter(twig_get_attribute((isset($context['page']) ? $context['page'] : NULL), "parent_id"), twig_get_attribute((isset($context['parent']) ? $context['parent'] : NULL), "id"));
+echo ">";
+echo fix(twig_get_attribute((isset($context['parent']) ? $context['parent'] : NULL), "title"));
+echo "</option>\n\t\t\t\t\t\t\t\t";
+}
+$context = $context['::parent'];
+/* LINE:39 */
+echo "\n\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t</p>\n";
+/* LINE:42 */
+if (twig_get_attribute((isset($context['route']) ? $context['route'] : NULL), "action") == ($tmp1 = "write_page")) {
+echo "\n\t\t\t\t\t\t";
+/* LINE:43 */
+echo call_user_func(array((isset($context['trigger']) ? $context['trigger'] : NULL), "call"), "new_page_options");
+echo "\n";
+} else {
+/* LINE:44 */
+echo "\n\t\t\t\t\t\t";
+/* LINE:45 */
+echo call_user_func(array((isset($context['trigger']) ? $context['trigger'] : NULL), "call"), "edit_page_options", (isset($context['page']) ? $context['page'] : NULL));
+echo "\n";
+}
+/* LINE:46 */
+echo "\n\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t</div>";
+}
+}

@@ -1,0 +1,72 @@
+<?php
+$this->requireTemplate("layout.twig");
+class __TwigTemplate_077d2db459dce75cf012016a6e4e9454 extends __TwigTemplate_d8fb9d03f55738ff78518e1bc2741faf {
+/* LINE:3 */
+public function block_title($context) {
+$context['::superblock'] = array($this, 'parent::block_title');
+echo twig_translate_string_filter("Themes");
+}
+
+/* LINE:5 */
+public function block_content($context) {
+$context['::superblock'] = array($this, 'parent::block_content');
+echo "\n\t\t\t<h1>";
+/* LINE:6 */
+echo twig_translate_string_filter("Themes");
+echo "</h1>\n\t\t\t";
+/* LINE:7 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, (isset($context['themes']) ? $context['themes'] : NULL)) as $iterator) {
+twig_set_loop_context($context, $iterator, "theme");
+echo "\n\t\t\t<div class=\"theme ";
+/* LINE:8 */
+if (twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "name") == ($tmp1 = twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "theme"))) {
+echo "current ";
+}
+echo "box left\">\n\t\t\t\t<a href=\"";
+/* LINE:9 */
+echo fix(Config::current()->chyrp_url."/admin/?action=".(("change_theme&theme=") . (twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "name"))));
+echo "\" class=\"link\">\n\t\t\t\t\t<span>";
+/* LINE:10 */
+echo fix(twig_translate_string_filter(twig_get_attribute(twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "info"), "name"), twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "name")));
+echo "</span>\n\t\t\t\t\t<img src=\"";
+/* LINE:11 */
+echo twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "screenshot");
+echo "\" alt=\"";
+echo fix((("\"") . (twig_get_attribute(twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "info"), "name"))) . ("\""));
+echo " screenshot\" class=\"screenshot\" width=\"256\" />\n\t\t\t\t</a>\n\t\t\t\t<br /><small>";
+/* LINE:13 */
+echo sprintf(twig_translate_string_filter("v%s by %s"), twig_get_attribute(twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "info"), "version"), twig_get_attribute(twig_get_attribute(twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "info"), "author"), "link"));
+echo "</small>\n\t\t\t\t<br />\n\t\t\t\t<br />\n\t\t\t\t";
+/* LINE:16 */
+if (twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "name") == ($tmp1 = twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "theme"))) {
+echo "\n\t\t\t\t<span class=\"button yay center\"><img src=\"images/icons/success.png\" alt=\"current theme\" />";
+/* LINE:17 */
+echo twig_translate_string_filter("Current Theme");
+echo "</span>\n\t\t\t\t";
+} else {
+/* LINE:18 */
+echo "\n\t\t\t\t<a class=\"button center\" href=\"";
+/* LINE:19 */
+echo fix(Config::current()->chyrp_url."/admin/?action=".(("change_theme&theme=") . (twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "name"))));
+echo "\"><img src=\"images/icons/appearance.png\" alt=\"Select\" />";
+echo twig_translate_string_filter("Select");
+echo "</a>\n\t\t\t\t<a class=\"button center\" href=\"";
+/* LINE:20 */
+echo url((("theme_preview/") . (twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "name"))) . ("/"));
+echo "\"><img src=\"images/icons/magnifier.png\" alt=\"Preview\" />";
+echo twig_translate_string_filter("Preview");
+echo "</a>\n\t\t\t\t";
+}
+/* LINE:21 */
+echo "\n\t\t\t</div>\n\t\t\t";
+}
+$context = $context['::parent'];
+/* LINE:23 */
+echo "\n\t\t\t<div class=\"clear\"></div>\n\t\t\t<br />\n\t\t\t<a class=\"button right\" href=\"http://chyrp.net/extend/browse/themes\">";
+/* LINE:26 */
+echo twig_translate_string_filter("Get More Themes &rsaquo;");
+echo "</a>\n";
+}
+
+}

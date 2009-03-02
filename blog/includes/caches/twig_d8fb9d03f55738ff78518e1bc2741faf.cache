@@ -1,0 +1,181 @@
+<?php
+class __TwigTemplate_d8fb9d03f55738ff78518e1bc2741faf {
+public function render($context) {
+/* LINE:1 */
+echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n\t\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"";
+/* LINE:3 */
+echo twig_first_filter(twig_split_filter(twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "locale"), "_"));
+echo "\" lang=\"";
+echo twig_first_filter(twig_split_filter(twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "locale"), "_"));
+echo "\">\n\t<head>\n\t\t<meta http-equiv=\"Content-type\" content=\"";
+/* LINE:5 */
+echo twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "type");
+echo "; charset=utf-8\" />\n\t\t<title>";
+/* LINE:6 */
+echo twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "name");
+echo ": ";
+$this->block_title($context);
+echo "</title>\n\t\t<link rel=\"stylesheet\" href=\"style.css\" type=\"text/css\" media=\"screen\" title=\"no title\" charset=\"utf-8\" />\n\t\t<script src=\"";
+/* LINE:8 */
+echo twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "chyrp_url");
+echo "/includes/lib/gz.php?file=jquery.js\" type=\"text/javascript\" charset=\"utf-8\"></script>\n\t\t<script src=\"";
+/* LINE:9 */
+echo twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "chyrp_url");
+echo "/includes/lib/gz.php?file=plugins.js\" type=\"text/javascript\" charset=\"utf-8\"></script>\n\t\t<script src=\"";
+/* LINE:10 */
+echo twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "chyrp_url");
+echo "/includes/admin.js.php?action=";
+echo twig_get_attribute((isset($context['route']) ? $context['route'] : NULL), "action");
+echo "\" type=\"text/javascript\" charset=\"utf-8\"></script>\n";
+/* LINE:11 */
+echo call_user_func(array((isset($context['trigger']) ? $context['trigger'] : NULL), "call"), "admin_head");
+echo "\n\t</head>\n\t<body>\n\t\t<div id=\"header\">\n\t\t\t<div class=\"column\">\n\t\t\t\t<ul id=\"navigation\">\n";
+/* LINE:17 */
+$this->block_navigation($context);
+/* LINE:23 */
+echo "\n\t\t\t\t</ul>\n\t\t\t\t<h1>";
+/* LINE:25 */
+echo twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "name");
+echo "</h1>\n\t\t\t</div>\n\t\t</div>\n\t\t<div id=\"welcome\">\n\t\t\t<div class=\"column\">\n\t\t\t\t<a href=\"";
+/* LINE:30 */
+echo twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "url");
+echo "\" class=\"right\">";
+echo twig_translate_string_filter("View Site &rsaquo;");
+echo "</a>\n\t\t\t\t";
+/* LINE:31 */
+echo sprintf(twig_translate_string_filter("Hello, %s!"), twig_fallback_filter(twig_first_filter(twig_split_filter(twig_get_attribute((isset($context['visitor']) ? $context['visitor'] : NULL), "full_name"))), twig_fallback_filter(twig_get_attribute((isset($context['visitor']) ? $context['visitor'] : NULL), "login"), twig_translate_string_filter("Guest"))));
+echo "\n\t\t\t\t<a href=\"";
+/* LINE:32 */
+echo url("logout/");
+echo "\">";
+echo twig_translate_string_filter("Log Out &rsaquo;");
+echo "</a>\n\t\t\t</div>\n\t\t</div>\n\t\t<ul class=\"column ";
+/* LINE:35 */
+echo twig_get_attribute((isset($context['route']) ? $context['route'] : NULL), "action");
+echo "_nav\" id=\"sub-nav\">\n";
+/* LINE:36 */
+$this->block_subnav($context);
+/* LINE:44 */
+echo "\n\t\t</ul>\n\t\t<div class=\"clear\"></div>\n\t\t<div class=\"column\" id=\"content\">\n\t\t\t";
+/* LINE:48 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_attribute((isset($context['flash']) ? $context['flash'] : NULL), "notices")) as $iterator) {
+twig_set_loop_context($context, $iterator, "notice");
+echo "\n\t\t\t<p class=\"message yay\">";
+/* LINE:49 */
+echo (isset($context['notice']) ? $context['notice'] : NULL);
+echo "</p>\n\t\t\t";
+}
+$context = $context['::parent'];
+/* LINE:50 */
+echo "\n\t\t\t";
+/* LINE:51 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_attribute((isset($context['flash']) ? $context['flash'] : NULL), "warnings")) as $iterator) {
+twig_set_loop_context($context, $iterator, "warning");
+echo "\n\t\t\t<p class=\"message boo\">";
+/* LINE:52 */
+echo (isset($context['warning']) ? $context['warning'] : NULL);
+echo "</p>\n\t\t\t";
+}
+$context = $context['::parent'];
+/* LINE:53 */
+echo "\n\t\t\t";
+/* LINE:54 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_attribute((isset($context['flash']) ? $context['flash'] : NULL), "messages")) as $iterator) {
+twig_set_loop_context($context, $iterator, "message");
+echo "\n\t\t\t<p class=\"message\">";
+/* LINE:55 */
+echo (isset($context['message']) ? $context['message'] : NULL);
+echo "</p>\n\t\t\t";
+}
+$context = $context['::parent'];
+/* LINE:56 */
+echo "\n";
+/* LINE:57 */
+$this->block_content($context);
+echo "\n\t\t\t<div class=\"clear\"></div>\n\t\t</div>\n\t\t<div class=\"column\" id=\"footer\">\n\t\t\t<img src=\"images/chyrp.gif\" alt=\"Logo\" />\n\t\t\t";
+/* LINE:62 */
+echo twig_translate_string_filter("Chyrp loves you.");
+echo "<br />\n\t\t\t<span class=\"sub\">\n\t\t\t\t";
+/* LINE:64 */
+echo sprintf(twig_translate_string_filter("v%s &copy; 2008 Alex Suraci"), (isset($context['version']) ? $context['version'] : NULL));
+echo "\n\t\t\t</span>\n\t\t</div>\n\t</body>\n</html>\n";
+}
+/* LINE:6 */
+public function block_title($context) {
+echo (isset($context['title']) ? $context['title'] : NULL);
+}
+
+/* LINE:17 */
+public function block_navigation($context) {
+echo "\n";
+/* LINE:18 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_array_items_filter((isset($context['navigation']) ? $context['navigation'] : NULL))) as $iterator) {
+twig_set_loop_context_multitarget($context, $iterator, array("action", "nav"));
+echo "\n\t\t\t\t\t";
+/* LINE:19 */
+if (twig_get_attribute((isset($context['nav']) ? $context['nav'] : NULL), "show")) {
+echo "\n\t\t\t\t\t<li class=\"";
+/* LINE:20 */
+echo (isset($context['action']) ? $context['action'] : NULL);
+if (twig_get_attribute((isset($context['nav']) ? $context['nav'] : NULL), "selected")) {
+echo " selected";
+}
+echo "\"";
+echo twig_get_attribute((isset($context['nav']) ? $context['nav'] : NULL), "attributes");
+echo "><a href=\"";
+echo fix(Config::current()->chyrp_url."/admin/?action=".((isset($context['action']) ? $context['action'] : NULL)));
+echo "\">";
+echo twig_get_attribute((isset($context['nav']) ? $context['nav'] : NULL), "title");
+echo "</a></li>\n\t\t\t\t\t";
+}
+/* LINE:21 */
+echo "\n";
+}
+$context = $context['::parent'];
+/* LINE:22 */
+echo "\n";
+}
+
+/* LINE:36 */
+public function block_subnav($context) {
+echo "\n";
+/* LINE:37 */
+if (twig_get_attribute((isset($context['subnav']) ? $context['subnav'] : NULL), twig_get_attribute((isset($context['route']) ? $context['route'] : NULL), "action"), false)) {
+echo "\n";
+/* LINE:38 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_array_items_filter(twig_get_attribute((isset($context['subnav']) ? $context['subnav'] : NULL), twig_get_attribute((isset($context['route']) ? $context['route'] : NULL), "action"), false))) as $iterator) {
+twig_set_loop_context_multitarget($context, $iterator, array("action", "nav"));
+echo "\n\t\t\t";
+/* LINE:39 */
+if (twig_get_attribute((isset($context['nav']) ? $context['nav'] : NULL), "show")) {
+echo "\n\t\t\t<li";
+/* LINE:40 */
+echo twig_selected_filter(twig_get_attribute((isset($context['route']) ? $context['route'] : NULL), "action"), twig_get_attribute((isset($context['nav']) ? $context['nav'] : NULL), "selected"), (isset($context['action']) ? $context['action'] : NULL));
+echo twig_get_attribute((isset($context['nav']) ? $context['nav'] : NULL), "attributes");
+echo "><a href=\"";
+echo fix(Config::current()->chyrp_url."/admin/?action=".((isset($context['action']) ? $context['action'] : NULL)));
+echo "\">";
+echo twig_get_attribute((isset($context['nav']) ? $context['nav'] : NULL), "title");
+echo "</a></li>\n\t\t\t";
+}
+/* LINE:41 */
+echo "\n";
+}
+$context = $context['::parent'];
+/* LINE:42 */
+echo "\n";
+}
+/* LINE:43 */
+echo "\n";
+}
+
+/* LINE:57 */
+public function block_content($context) {
+}
+
+}

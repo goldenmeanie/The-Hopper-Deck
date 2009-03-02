@@ -1,0 +1,16 @@
+<?php
+$this->requireTemplate("content/post.twig");
+class __TwigTemplate_b1ea9cb70b49fb583c08c75547f72ad7 extends __TwigTemplate_9a03d49621a9353c4c028163b46237c9 {
+/* LINE:3 */
+public function block_content($context) {
+$context['::superblock'] = array($this, 'parent::block_content');
+echo "\n\t\t\t\t\t\t";
+/* LINE:4 */
+echo call_user_func(array(twig_get_attribute((isset($context['feathers']) ? $context['feathers'] : NULL), "photo", false), "image_tag_for"), (isset($context['post']) ? $context['post'] : NULL), 434);
+echo "\n\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t\t";
+/* LINE:6 */
+echo twig_missing_filter("read_more", twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "caption"));
+echo "\n";
+}
+
+}

@@ -1,0 +1,86 @@
+<?php
+$this->requireTemplate("layouts/default.twig");
+class __TwigTemplate_ce2bde38cae0078b7cd80f2e1252a85c extends __TwigTemplate_c19a24ba4c4f488924cc287729ac8d39 {
+/* LINE:2 */
+public function block_content($context) {
+$context['::superblock'] = array($this, 'parent::block_content');
+echo "\n\t\t\t\t";
+/* LINE:3 */
+if ((!twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "next"), "no_results"))) {
+echo "<a class=\"right next_post\" href=\"";
+echo twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "next"), "url");
+echo "\">";
+echo truncate(twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "next"), "title"), 40);
+echo " &rarr;</a>";
+}
+echo "\n\t\t\t\t";
+/* LINE:4 */
+if ((!twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "prev"), "no_results"))) {
+echo "<a class=\"left prev_post\" href=\"";
+echo twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "prev"), "url");
+echo "\">&larr; ";
+echo truncate(twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "prev"), "title"), 40);
+echo "</a>";
+}
+echo "\n\t\t\t\t<div class=\"clear\"></div>\n";
+/* LINE:6 */
+twig_get_current_template()->loader->getTemplate((("feathers/") . (twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "feather"))) . (".twig"))->display($context);
+echo "\n";
+/* LINE:7 */
+if (twig_get_attribute((isset($context['enabled_modules']) ? $context['enabled_modules'] : NULL), "comments")) {
+echo "\n\t\t\t\t<br />\n\t\t\t\t<h2 class=\"comments\">";
+/* LINE:9 */
+echo twig_translate_string_filter("Comments");
+echo "</h2>\n\t\t\t\t";
+/* LINE:10 */
+if (twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "comment_count") > ($tmp1 = 0)) {
+echo "\n\t\t\t\t<ol class=\"comments\" id=\"comments_";
+/* LINE:11 */
+echo twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "id");
+echo "\">\n\t\t\t\t\t";
+/* LINE:12 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "comments"), "paginated")) as $iterator) {
+twig_set_loop_context($context, $iterator, "comment");
+twig_get_current_template()->loader->getTemplate("content/comment.twig")->display($context);
+}
+$context = $context['::parent'];
+echo "\n\t\t\t\t</ol>\n\t\t\t\t";
+}
+/* LINE:14 */
+echo "\n\t\t\t\t<input type=\"hidden\" name=\"last_comment\" value=\"";
+/* LINE:15 */
+echo twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "latest_comment");
+echo "\" id=\"last_comment\" />\n\t\t\t\t";
+/* LINE:16 */
+echo twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "comments"), "prev_link");
+echo "\n\t\t\t\t";
+/* LINE:17 */
+echo twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "comments"), "next_link");
+echo "\n\t\t\t\t";
+/* LINE:18 */
+if ((twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "comments"), "paginated")) && (twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "comments"), "pages") > ($tmp1 = 1))) {
+echo "\n\t\t\t\t<span class=\"pages\">Page ";
+/* LINE:19 */
+echo twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "comments"), "page");
+echo " of ";
+echo twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "comments"), "pages");
+echo "</span>\n\t\t\t\t";
+}
+/* LINE:20 */
+echo "\n";
+/* LINE:21 */
+if (twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "commentable")) {
+echo "\n";
+/* LINE:22 */
+twig_get_current_template()->loader->getTemplate("forms/comment/new.twig")->display($context);
+echo "\n";
+}
+/* LINE:23 */
+echo "\n";
+}
+/* LINE:24 */
+echo "\n";
+}
+
+}

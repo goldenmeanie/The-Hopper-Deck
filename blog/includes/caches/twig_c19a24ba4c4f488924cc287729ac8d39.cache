@@ -1,0 +1,195 @@
+<?php
+class __TwigTemplate_c19a24ba4c4f488924cc287729ac8d39 {
+public function render($context) {
+/* LINE:1 */
+echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n\t\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<head profile=\"http://gmpg.org/xfn/11\">\n\t\t<meta http-equiv=\"Content-type\" content=\"";
+/* LINE:5 */
+echo twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "type");
+echo "; charset=utf-8\" />\n\t\t<title>";
+/* LINE:6 */
+$this->block_title($context);
+echo "</title>\n\t\t<meta name=\"generator\" content=\"Chyrp\" />\n\t\t<link rel=\"pingback\" href=\"";
+/* LINE:8 */
+echo twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "chyrp_url");
+echo "/includes/xmlrpc.php\" />\n\t\t<link rel=\"EditURI\" type=\"application/rsd+xml\" href=\"";
+/* LINE:9 */
+echo twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "chyrp_url");
+echo "/includes/rsd.php\" />\n\t\t";
+/* LINE:10 */
+echo twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "feeds");
+echo "\n\t\t";
+/* LINE:11 */
+echo twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "stylesheets");
+echo "\n\t\t";
+/* LINE:12 */
+echo twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "javascripts");
+echo "\n";
+/* LINE:13 */
+echo call_user_func(array((isset($context['trigger']) ? $context['trigger'] : NULL), "call"), "head");
+echo "\n\t</head>\n\t<body>\n";
+/* LINE:16 */
+if (call_user_func(array(twig_get_attribute((isset($context['visitor']) ? $context['visitor'] : NULL), "group"), "can"), "add_post", "add_draft", "add_page", "view_own_draft", "view_draft", "change_settings", "toggle_extensions")) {
+echo "\n\t\t<div id=\"controls\" ";
+/* LINE:17 */
+if ((isset($context['hide_admin']) ? $context['hide_admin'] : NULL)) {
+echo " style=\"display: none\"";
+}
+echo ">\n\t\t\t<ul>\n";
+/* LINE:19 */
+if (call_user_func(array(twig_get_attribute((isset($context['visitor']) ? $context['visitor'] : NULL), "group"), "can"), "add_post")) {
+echo "\n\t\t\t\t<li><a id=\"add_post\" href=\"";
+/* LINE:20 */
+echo fix(Config::current()->chyrp_url."/admin/?action=".("write_post"));
+echo "\">";
+echo twig_translate_string_filter("Write");
+echo "</a></li>\n";
+}
+elseif (call_user_func(array(twig_get_attribute((isset($context['visitor']) ? $context['visitor'] : NULL), "group"), "can"), "add_draft")) {
+/* LINE:21 */
+echo "\n\t\t\t\t<li><a id=\"add_draft\" href=\"";
+/* LINE:22 */
+echo fix(Config::current()->chyrp_url."/admin/?action=".("write_post"));
+echo "\">";
+echo twig_translate_string_filter("Write Draft");
+echo "</a></li>\n";
+}
+/* LINE:23 */
+echo "\n";
+/* LINE:24 */
+if (call_user_func(array(twig_get_attribute((isset($context['visitor']) ? $context['visitor'] : NULL), "group"), "can"), "add_page")) {
+echo "\n\t\t\t\t<li><a id=\"add_page\" href=\"";
+/* LINE:25 */
+echo fix(Config::current()->chyrp_url."/admin/?action=".("write_page"));
+echo "\">";
+echo twig_translate_string_filter("Add Page");
+echo "</a></li>\n";
+}
+/* LINE:26 */
+echo "\n";
+/* LINE:27 */
+if (call_user_func(array(twig_get_attribute((isset($context['visitor']) ? $context['visitor'] : NULL), "group"), "can"), "view_own_draft", "view_draft")) {
+echo "\n\t\t\t\t<li><a id=\"your_drafts\" href=\"";
+/* LINE:28 */
+echo url("drafts/");
+echo "\">";
+echo twig_translate_string_filter("Your Drafts");
+echo "</a></li>\n";
+}
+/* LINE:29 */
+echo "\n";
+/* LINE:30 */
+if (call_user_func(array(twig_get_attribute((isset($context['visitor']) ? $context['visitor'] : NULL), "group"), "can"), "change_settings", "toggle_extensions")) {
+echo "\n\t\t\t\t<li><a id=\"site_settings\" href=\"";
+/* LINE:31 */
+echo twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "chyrp_url");
+echo "/admin/\">";
+echo twig_translate_string_filter("Admin");
+echo "</a></li>\n";
+}
+/* LINE:32 */
+echo "\n\t\t\t\t<li class=\"close\"><a class=\"toggle_admin\" href=\"";
+/* LINE:33 */
+echo url("toggle_admin/");
+echo "\">";
+echo twig_translate_string_filter("Close");
+echo "</a></li>\n\t\t\t</ul>\n\t\t</div>\n";
+}
+/* LINE:36 */
+echo "\n\t\t<div id=\"header\">\n\t\t\t<div class=\"header_box\">\n";
+/* LINE:39 */
+if (twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "name")) {
+echo "\n\t\t\t\t<h1><a href=\"";
+/* LINE:40 */
+echo twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "url");
+echo "\">";
+echo twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "name");
+echo "</a></h1>\n\t\t\t\t";
+/* LINE:41 */
+if (twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "description")) {
+echo "\n\t\t\t\t<h2>";
+/* LINE:42 */
+echo twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "description");
+echo "</h2>\n\t\t\t\t";
+}
+/* LINE:43 */
+echo "\n";
+}
+/* LINE:44 */
+echo "\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div id=\"wrapper\">\n";
+/* LINE:49 */
+twig_get_current_template()->loader->getTemplate("content/sidebar.twig")->display($context);
+echo "\n\t\t\t<div id=\"content\">\n";
+/* LINE:51 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_array_items_filter(twig_get_attribute((isset($context['flash']) ? $context['flash'] : NULL), "all"))) as $iterator) {
+twig_set_loop_context_multitarget($context, $iterator, array("type", "messages"));
+echo "\n\t\t\t\t";
+/* LINE:52 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, (isset($context['messages']) ? $context['messages'] : NULL)) as $iterator) {
+twig_set_loop_context($context, $iterator, "message");
+echo "\n\t\t\t\t<div class=\"";
+/* LINE:53 */
+echo twig_depluralize_string_filter((isset($context['type']) ? $context['type'] : NULL));
+echo "\">";
+echo (isset($context['message']) ? $context['message'] : NULL);
+echo "</div>\n\t\t\t\t";
+}
+$context = $context['::parent'];
+/* LINE:54 */
+echo "\n";
+}
+$context = $context['::parent'];
+/* LINE:55 */
+echo "\n";
+/* LINE:56 */
+$this->block_content($context);
+echo "\n\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t";
+/* LINE:58 */
+echo twig_get_attribute((isset($context['posts']) ? $context['posts'] : NULL), "prev_link");
+echo "\n\t\t\t\t";
+/* LINE:59 */
+echo twig_get_attribute((isset($context['posts']) ? $context['posts'] : NULL), "next_link");
+echo "\n\t\t\t\t";
+/* LINE:60 */
+if ((twig_get_attribute((isset($context['posts']) ? $context['posts'] : NULL), "paginated")) && (twig_get_attribute((isset($context['posts']) ? $context['posts'] : NULL), "pages") > ($tmp1 = 1))) {
+echo "\n\t\t\t\t<span class=\"pages\">Page ";
+/* LINE:61 */
+echo twig_get_attribute((isset($context['posts']) ? $context['posts'] : NULL), "page");
+echo " of ";
+echo twig_get_attribute((isset($context['posts']) ? $context['posts'] : NULL), "pages");
+echo "</span>\n\t\t\t\t";
+}
+/* LINE:62 */
+echo "\n\t\t\t\t<div id=\"footer\">\n\t\t\t\t\t<p>Stardust theme &copy; 2008 <a href=\"http://lofisoami.com\">Aaron MacDonald</a></p>\n\t\t\t\t\t<p>";
+/* LINE:65 */
+echo twig_translate_string_filter("Powered by <a class=\"chyrp\" href=\"http://chyrp.net/\">Chyrp</a>");
+echo "</p>\n\t\t\t\t\t<a class=\"atom\" href=\"";
+/* LINE:66 */
+echo url("feed/");
+echo "\">atom</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n";
+/* LINE:77 */
+echo "\n";
+/* LINE:78 */
+echo call_user_func(array((isset($context['trigger']) ? $context['trigger'] : NULL), "call"), "end_content");
+echo "\n\t\t<!-- Queries: ";
+/* LINE:79 */
+echo (isset($context['sql_queries']) ? $context['sql_queries'] : NULL);
+echo " | Load Time: ";
+echo twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "load_time");
+echo " -->\n\t</body>\n</html>";
+}
+/* LINE:6 */
+public function block_title($context) {
+echo twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "name");
+if ((isset($context['title']) ? $context['title'] : NULL)) {
+echo " &raquo; ";
+echo fix((isset($context['title']) ? $context['title'] : NULL));
+}
+}
+
+/* LINE:56 */
+public function block_content($context) {
+}
+
+}

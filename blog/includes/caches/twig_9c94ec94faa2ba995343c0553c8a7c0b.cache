@@ -1,0 +1,25 @@
+<?php
+$this->requireTemplate("layouts/default.twig");
+class __TwigTemplate_9c94ec94faa2ba995343c0553c8a7c0b extends __TwigTemplate_c19a24ba4c4f488924cc287729ac8d39 {
+/* LINE:2 */
+public function block_content($context) {
+$context['::superblock'] = array($this, 'parent::block_content');
+echo "\n\t<h2>";
+/* LINE:3 */
+echo twig_translate_string_filter("Log In");
+echo "</h2>\n\t<form action=\"";
+/* LINE:4 */
+echo url("login/");
+echo "\" method=\"post\">\n\t\t<p>\n\t\t\t<label for=\"login\">";
+/* LINE:6 */
+echo twig_translate_string_filter("Username");
+echo "</label>\n\t\t\t<input type=\"text\" name=\"login\" value=\"\" id=\"login\" />\n\t\t</p>\n\t\t<p>\n\t\t\t<label for=\"password\">";
+/* LINE:10 */
+echo twig_translate_string_filter("Password");
+echo "</label>\n\t\t\t<input type=\"password\" name=\"password\" value=\"\" id=\"password\" />\n\t\t</p>\n\n\t\t<p><button name=\"submit\" type=\"submit\" id=\"submit\">";
+/* LINE:14 */
+echo twig_translate_string_filter("Log In");
+echo "</button></p>\n\t</form>\n";
+}
+
+}

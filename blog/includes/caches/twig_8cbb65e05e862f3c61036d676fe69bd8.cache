@@ -1,0 +1,146 @@
+<?php
+$this->requireTemplate("layout.twig");
+class __TwigTemplate_8cbb65e05e862f3c61036d676fe69bd8 extends __TwigTemplate_d8fb9d03f55738ff78518e1bc2741faf {
+/* LINE:3 */
+public function block_title($context) {
+$context['::superblock'] = array($this, 'parent::block_title');
+echo twig_translate_string_filter("Manage Posts");
+}
+
+/* LINE:5 */
+public function block_content($context) {
+$context['::superblock'] = array($this, 'parent::block_content');
+echo "\n\t\t\t<h1>";
+/* LINE:6 */
+echo twig_translate_string_filter("Manage Posts");
+echo "</h1>\n\t\t\t<h2>";
+/* LINE:7 */
+echo twig_translate_string_filter("Need more detail?");
+echo "</h2>\n\t\t\t<form class=\"detail\" action=\"index.php\" method=\"get\" accept-charset=\"utf-8\">\n\t\t\t\t<fieldset>\n\t\t\t\t\t<input type=\"hidden\" name=\"action\" value=\"manage_posts\" />\n\t\t\t\t\t<div class=\"left pad margin-right\">\n\t\t\t\t\t\t<h3>\n\t\t\t\t\t\t\t";
+/* LINE:13 */
+echo twig_translate_string_filter("Search&hellip;");
+echo "\n\t\t\t\t\t\t\t<a href=\"";
+/* LINE:14 */
+echo fix(Config::current()->chyrp_url."/admin/?action=".("help&id=filtering_results"));
+echo "\" class=\"help emblem\"><img src=\"images/icons/help.png\" alt=\"help\" /></a>\n\t\t\t\t\t\t</h3>\n\t\t\t\t\t\t<input class=\"text\" type=\"text\" name=\"query\" value=\"";
+/* LINE:16 */
+echo fix(twig_get_attribute((isset($context['GET']) ? $context['GET'] : NULL), "query"));
+echo "\" id=\"query\" /> <button type=\"submit\" class=\"inline\">";
+echo twig_translate_string_filter("Search &rarr;");
+echo "</button>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"left pad\">\n\t\t\t\t\t\t<h3>";
+/* LINE:19 */
+echo twig_translate_string_filter("Browse by month:");
+echo "</h3>\n\t\t\t\t\t\t<select name=\"month\">\n\t\t\t\t\t\t\t<option value=\"\">----------</option>\n\t\t\t\t\t\t\t";
+/* LINE:22 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_attribute((isset($context['theme']) ? $context['theme'] : NULL), "archives_list")) as $iterator) {
+twig_set_loop_context($context, $iterator, "archive");
+echo "\n\t\t\t\t\t\t\t<option value=\"";
+/* LINE:23 */
+echo twig_strftime_format_filter(twig_get_attribute((isset($context['archive']) ? $context['archive'] : NULL), "when"), "%Y-%m");
+echo "\"";
+echo twig_option_selected_filter(twig_get_attribute((isset($context['GET']) ? $context['GET'] : NULL), "month"), twig_strftime_format_filter(twig_get_attribute((isset($context['archive']) ? $context['archive'] : NULL), "when"), "%Y-%m"));
+echo ">";
+echo twig_strftime_format_filter(twig_get_attribute((isset($context['archive']) ? $context['archive'] : NULL), "when"), "%B %Y");
+echo " (";
+echo twig_get_attribute((isset($context['archive']) ? $context['archive'] : NULL), "count");
+echo ")</option>\n\t\t\t\t\t\t\t";
+}
+$context = $context['::parent'];
+/* LINE:24 */
+echo "\n\t\t\t\t\t\t</select>\n\t\t\t\t\t\t<button type=\"submit\" class=\"inline\">";
+/* LINE:26 */
+echo twig_translate_string_filter("Show &rarr;");
+echo "</button>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t</fieldset>\n\t\t\t</form>\n\t\t\t<br />\n\t\t\t<h2>";
+/* LINE:32 */
+echo twig_translate_string_filter("Last 25 Posts");
+echo "</h2>\n\t\t\t<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" class=\"wide\">\n\t\t\t\t<thead>\n\t\t\t\t\t<tr class=\"head\">\n\t\t\t\t\t\t<th>";
+/* LINE:36 */
+echo twig_translate_string_filter("Title");
+echo "</th>\n\t\t\t\t\t\t<th>";
+/* LINE:37 */
+echo twig_translate_string_filter("Posted");
+echo "</th>\n\t\t\t\t\t\t<th>";
+/* LINE:38 */
+echo twig_translate_string_filter("Status");
+echo "</th>\n\t\t\t\t\t\t<th>";
+/* LINE:39 */
+echo twig_translate_string_filter("Author");
+echo "</th>\n\t\t\t\t\t\t";
+/* LINE:40 */
+echo call_user_func(array((isset($context['trigger']) ? $context['trigger'] : NULL), "call"), "manage_posts_column_header");
+echo "\n\t\t\t\t\t\t<th colspan=\"2\">";
+/* LINE:41 */
+echo twig_translate_string_filter("Controls");
+echo "</th>\n\t\t\t\t\t</tr>\n\t\t\t\t</thead>\n\t\t\t\t<tbody>\n\t\t\t\t";
+/* LINE:45 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, twig_get_attribute((isset($context['posts']) ? $context['posts'] : NULL), "paginated")) as $iterator) {
+twig_set_loop_context($context, $iterator, "post");
+echo "\n\t\t\t\t\t<tr id=\"post_";
+/* LINE:46 */
+echo twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "id");
+echo "\" class=\"post ";
+echo twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "status");
+if (twig_get_attribute((isset($context['loop']) ? $context['loop'] : NULL), "last")) {
+echo " last";
+}
+echo "\">\n\t\t\t\t\t\t<td class=\"main\"><a href=\"";
+/* LINE:47 */
+echo twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "url");
+echo "\">";
+echo truncate(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "title"));
+echo "</a></td>\n\t\t\t\t\t\t<td>";
+/* LINE:48 */
+echo twig_strftime_format_filter(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "created_at"));
+echo "</td>\n\t\t\t\t\t\t<td>";
+/* LINE:49 */
+echo twig_translate_string_filter(twig_title_string_filter(twig_replace_filter(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "status"), "_", " ")));
+echo "</td>\n\t\t\t\t\t\t<td>";
+/* LINE:50 */
+echo twig_get_attribute(twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "user"), "login");
+echo "</td>\n\t\t\t\t\t\t";
+/* LINE:51 */
+echo call_user_func(array((isset($context['trigger']) ? $context['trigger'] : NULL), "call"), "manage_posts_column", (isset($context['post']) ? $context['post'] : NULL));
+echo "\n";
+/* LINE:52 */
+if ((twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "editable")) && (twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "deletable"))) {
+echo "\n\t\t\t\t\t\t<td class=\"controls\">";
+/* LINE:53 */
+echo call_user_func(array((isset($context['post']) ? $context['post'] : NULL), "edit_link"), ("<img src=\"images/icons/edit.png\" alt=\"edit\" /> ") . (twig_translate_string_filter("edit")));
+echo "</td>\n\t\t\t\t\t\t<td class=\"controls\">";
+/* LINE:54 */
+echo call_user_func(array((isset($context['post']) ? $context['post'] : NULL), "delete_link"), ("<img src=\"images/icons/delete.png\" alt=\"delete\" /> ") . (twig_translate_string_filter("delete")));
+echo "</td>\n";
+}
+elseif ((twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "editable")) || (twig_get_attribute((isset($context['post']) ? $context['post'] : NULL), "deletable"))) {
+/* LINE:55 */
+echo "\n\t\t\t\t\t\t";
+/* LINE:56 */
+echo call_user_func(array((isset($context['post']) ? $context['post'] : NULL), "edit_link"), ("<img src=\"images/icons/edit.png\" alt=\"edit\" /> ") . (twig_translate_string_filter("edit")), "<td class=\"controls\" colspan=\"2\">", "</td>");
+echo "\n\t\t\t\t\t\t";
+/* LINE:57 */
+echo call_user_func(array((isset($context['post']) ? $context['post'] : NULL), "delete_link"), ("<img src=\"images/icons/delete.png\" alt=\"delete\" /> ") . (twig_translate_string_filter("delete")), "<td class=\"controls\" colspan=\"2\">", "</td>");
+echo "\n";
+}
+/* LINE:58 */
+echo "\n\t\t\t\t\t</tr>\n\t\t\t\t";
+}
+if (!$context['loop']['iterated']) {
+/* LINE:60 */
+echo "\n\t\t\t\t\t<tr class=\"last\">\n\t\t\t\t\t\t<td colspan=\"6\" class=\"center\"><span class=\"sub\">";
+/* LINE:62 */
+echo twig_translate_string_filter("(none)");
+echo "</span></td>\n\t\t\t\t\t</tr>\n\t\t\t\t";
+}$context = $context['::parent'];
+/* LINE:64 */
+echo "\n\t\t\t\t</tbody>\n\t\t\t</table>\n\t\t\t<br />\n\t\t\t";
+/* LINE:68 */
+echo twig_get_attribute((isset($context['posts']) ? $context['posts'] : NULL), "next_link");
+echo "\n\t\t\t";
+/* LINE:69 */
+echo twig_get_attribute((isset($context['posts']) ? $context['posts'] : NULL), "prev_link");
+echo "\n";
+}
+
+}

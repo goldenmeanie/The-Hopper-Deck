@@ -1,0 +1,115 @@
+<?php
+$this->requireTemplate("layout.twig");
+class __TwigTemplate_5c5240f83215bf0b18862467d065a407 extends __TwigTemplate_d8fb9d03f55738ff78518e1bc2741faf {
+/* LINE:3 */
+public function block_title($context) {
+$context['::superblock'] = array($this, 'parent::block_title');
+echo twig_translate_string_filter("Site Configuration");
+}
+
+/* LINE:5 */
+public function block_content($context) {
+$context['::superblock'] = array($this, 'parent::block_content');
+echo "\n\t\t\t<h1>";
+/* LINE:6 */
+echo twig_translate_string_filter("Site Configuration");
+echo "</h1>\n\t\t\t<form id=\"general_settings\" class=\"split\" action=\"";
+/* LINE:7 */
+echo fix(Config::current()->chyrp_url."/admin/?action=".("general_settings"));
+echo "\" method=\"post\" accept-charset=\"utf-8\" enctype=\"multipart/form-data\">\n\t\t\t\t<fieldset>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t<label for=\"name\">";
+/* LINE:10 */
+echo twig_translate_string_filter("Site Name");
+echo "</label>\n\t\t\t\t\t\t<input class=\"text\" type=\"text\" name=\"name\" value=\"";
+/* LINE:11 */
+echo fix(twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "name"));
+echo "\" id=\"name\" />\n\t\t\t\t\t</p>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t<label for=\"description\">";
+/* LINE:14 */
+echo twig_translate_string_filter("Description");
+echo "</label>\n\t\t\t\t\t\t<textarea name=\"description\" rows=\"2\" cols=\"40\">";
+/* LINE:15 */
+echo fix(twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "description"));
+echo "</textarea>\n\t\t\t\t\t</p>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t<label for=\"chyrp_url\">";
+/* LINE:18 */
+echo twig_translate_string_filter("Chyrp URL");
+echo "</label>\n\t\t\t\t\t\t<input class=\"text\" type=\"text\" name=\"chyrp_url\" value=\"";
+/* LINE:19 */
+echo fix(twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "chyrp_url"));
+echo "\" id=\"chyrp_url\" />\n\t\t\t\t\t</p>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t<label for=\"url\">\n\t\t\t\t\t\t\t";
+/* LINE:23 */
+echo twig_translate_string_filter("Alternate URL");
+echo "\n\t\t\t\t\t\t\t<span class=\"sub\">";
+/* LINE:24 */
+echo twig_translate_string_filter("(optional)");
+echo "</span>\n\t\t\t\t\t\t</label>\n\t\t\t\t\t\t<input class=\"text\" type=\"text\" name=\"url\" value=\"";
+/* LINE:26 */
+if (twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "url") != ($tmp1 = twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "chyrp_url"))) {
+echo fix(twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "url"));
+}
+echo "\" id=\"url\" />\n\t\t\t\t\t\t<a href=\"";
+/* LINE:27 */
+echo fix(Config::current()->chyrp_url."/admin/?action=".("help&id=alternate_urls"));
+echo "\" class=\"help emblem\"><img src=\"images/icons/help.png\" alt=\"help\" /></a>\n\t\t\t\t\t\t<small>\n\t\t\t\t\t\t\t";
+/* LINE:29 */
+echo twig_translate_string_filter("Enter an alternate address here if you want your homepage URL to be different from the URL where Chyrp is normally available.");
+echo "\n\t\t\t\t\t\t</small>\n\t\t\t\t\t</p>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t<label for=\"email\">";
+/* LINE:33 */
+echo twig_translate_string_filter("Contact E-Mail Address");
+echo "</label>\n\t\t\t\t\t\t<input class=\"text\" type=\"text\" name=\"email\" value=\"";
+/* LINE:34 */
+echo fix(twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "email"));
+echo "\" id=\"email\" />\n\t\t\t\t\t</p>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t<label for=\"timezone\">";
+/* LINE:37 */
+echo twig_translate_string_filter("What time is it?");
+echo "</label>\n\t\t\t\t\t\t<select name=\"timezone\" id=\"timezone\">\n\t\t\t\t\t\t";
+/* LINE:39 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, (isset($context['timezones']) ? $context['timezones'] : NULL)) as $iterator) {
+twig_set_loop_context($context, $iterator, "zone");
+echo "\n\t\t\t\t\t\t\t<option value=\"";
+/* LINE:40 */
+echo twig_get_attribute((isset($context['zone']) ? $context['zone'] : NULL), "name");
+echo "\"";
+echo twig_option_selected_filter(twig_get_attribute((isset($context['zone']) ? $context['zone'] : NULL), "name"), twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "timezone"));
+echo ">";
+echo twig_strftime_format_filter(twig_get_attribute((isset($context['zone']) ? $context['zone'] : NULL), "now"), twig_translate_string_filter("%I:%M %p on %B %e, %Y"));
+echo " (GMT";
+if (twig_get_attribute((isset($context['zone']) ? $context['zone'] : NULL), "offset") >= ($tmp1 = 0)) {
+echo "+";
+}
+echo twig_get_attribute((isset($context['zone']) ? $context['zone'] : NULL), "offset");
+echo ")</option>\n\t\t\t\t\t\t";
+}
+$context = $context['::parent'];
+/* LINE:41 */
+echo "\n\t\t\t\t\t\t</select>\n\t\t\t\t\t</p>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t<label for=\"locale\">";
+/* LINE:45 */
+echo twig_translate_string_filter("Language");
+echo "</label>\n\t\t\t\t\t\t<select name=\"locale\" id=\"locale\">\n\t\t\t\t\t\t\t";
+/* LINE:47 */
+$context['::parent'] = $parent = $context;
+foreach (twig_iterate($context, (isset($context['locales']) ? $context['locales'] : NULL)) as $iterator) {
+twig_set_loop_context($context, $iterator, "locale");
+echo "\n\t\t\t\t\t\t\t<option value=\"";
+/* LINE:48 */
+echo twig_get_attribute((isset($context['locale']) ? $context['locale'] : NULL), "code");
+echo "\"";
+echo twig_option_selected_filter(twig_get_attribute((isset($context['locale']) ? $context['locale'] : NULL), "code"), twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "locale"));
+echo ">";
+echo twig_get_attribute((isset($context['locale']) ? $context['locale'] : NULL), "name");
+echo "</option>\n\t\t\t\t\t\t\t";
+}
+$context = $context['::parent'];
+/* LINE:49 */
+echo "\n\t\t\t\t\t\t\t<option value=\"en_US\"";
+/* LINE:50 */
+echo twig_option_selected_filter("en_US", twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "locale"));
+echo ">English (US)</option>\n\t\t\t\t\t\t</select>\n\t\t\t\t\t</p>\n\n\t\t\t\t\t<p class=\"buttons\">\n\t\t\t\t\t\t<button type=\"submit\" class=\"yay\"><img src=\"images/icons/success.png\" alt=\"success\" />";
+/* LINE:55 */
+echo twig_translate_string_filter("Update");
+echo "</button>\n\t\t\t\t\t</p>\n\n\t\t\t\t\t<input type=\"hidden\" name=\"hash\" value=\"";
+/* LINE:58 */
+echo twig_get_attribute((isset($context['site']) ? $context['site'] : NULL), "secure_hashkey");
+echo "\" id=\"hash\" />\n\t\t\t\t</fieldset>\n\t\t\t</form>\n";
+}
+
+}

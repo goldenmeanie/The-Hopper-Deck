@@ -1,0 +1,25 @@
+<?php
+$this->requireTemplate("layouts/default.twig");
+class __TwigTemplate_f2ea21a7b954acb0eea2c4679e941d4f extends __TwigTemplate_c19a24ba4c4f488924cc287729ac8d39 {
+/* LINE:2 */
+public function block_content($context) {
+$context['::superblock'] = array($this, 'parent::block_content');
+echo "\n\t<h2>";
+/* LINE:3 */
+echo twig_translate_string_filter("Lost Password");
+echo "</h2>\n\t<form action=\"";
+/* LINE:4 */
+echo url("lost_password/");
+echo "\" method=\"post\">\n\t\t<p class=\"lost_pass\">";
+/* LINE:5 */
+echo twig_translate_string_filter("Please enter your username below and we will e-mail you a new password for your account.");
+echo "</p>\n\t\t<p>\n\t\t\t<label for=\"login\">";
+/* LINE:7 */
+echo twig_translate_string_filter("Username");
+echo "</label>\n\t\t\t<input type=\"text\" name=\"login\" value=\"\" id=\"login\" />\n\t\t</p>\n\n\t\t<p><button name=\"submit\" type=\"submit\" id=\"submit\">";
+/* LINE:11 */
+echo twig_translate_string_filter("Submit");
+echo "</button></p>\n\t</form>\n";
+}
+
+}
