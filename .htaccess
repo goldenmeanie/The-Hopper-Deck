@@ -1,1 +1,3 @@
-Redirect 301 /blog/* http://blog.thehopperdeck.com
+Redirect 301 /blog/index.php http://blog.thehopperdeck.com
+Redirect 301 /blog/index.html http://blog.thehopperdeck.com
+Redirect 301 /blog/ http://blog.thehopperdeck.com
