@@ -99,6 +99,12 @@ body > div {
     margin: 20px 0;
     padding-top: 20px;
 }
+body .intro #mc_embed_signup input.email {
+    width: 520px;
+}
+body .intro #mc_embed_signup input.button {
+    width: 15%;
+}
 .ordering {
     margin-top: 40px;
 }
