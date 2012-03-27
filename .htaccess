@@ -1,3 +1,5 @@
 Redirect 301 /blog/* http://blog.thehopperdeck.com/
 Redirect 301 /blog http://blog.thehopperdeck.com/
+Redirect 301 /team http://thehopperdeck.com/
+Redirect 301 /order http://thehopperdeck.com/
 
