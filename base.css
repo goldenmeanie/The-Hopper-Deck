@@ -1,0 +1,132 @@
+/* / / / / / Reset / / / / / */
+
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote, pre, form, fieldset, table, th, td {
+    font-family: "helvetica neue", helvetica, arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+html {
+/*  overflow-y: scroll;*/
+}
+body {
+    color: #000;
+    font-size: 82.75%;
+    line-height: 140%;
+    position: relative;
+}
+
+
+/* Basics */
+
+
+body > div {
+    font-family: "helvetica neue";
+    margin: 0 auto;
+    width: 840px;
+    
+}
+.intro {
+    background: transparent;
+    margin: 20px auto;
+    padding: .1%;
+    position: relative;
+}
+.intro h1 {
+    background: url(/img/logo.png) no-repeat 5px 0px;
+    display: block;
+    font-size: 300%;
+    margin: 10px;
+    padding: 65px 10px 15px 10px;
+    text-indent: -99999px;
+    width: 800px;
+}
+.thd,
+.tbb,
+.new {
+    
+    float: left;
+/*     height: 280px; */
+    margin: 10px 0 10px 10px;
+    position: relative;
+/*     width: 380px; */
+}
+.thd {
+    margin-left: 15px;
+}
+.intro div a,
+.new p {
+/*     background: red; */
+    color: #000;
+    display: block;
+    height: 120px;
+    font-size: 140%;
+/*     font-weight: bold; */
+    line-height: 1.15;
+    padding: 205px 10px 10px 10px;
+    text-decoration: none;
+    width: 240px;
+}
+.intro p strong {
+    color: #000;
+/*     text-transform: uppercase; */
+}
+.intro div a:hover,
+.intro div a:hover strong {
+/*     background-color: rgba(255, 66, 67, .25) ; */
+    color: #f30;
+}
+.thd p {
+    background: url(/img/murph-and-deck.jpg) no-repeat 0px 0px;
+}
+.soldout a {
+    background-image: url(/img/sold-out-small.png);
+    background-position: -75px -75px;
+    background-repeat: no-repeat;
+}
+.soldout a:hover {
+/*     background-image: url(/img/sold-out.png); */
+/*     background-position: -110px -115px; */
+}
+.tbb p {
+    background: url(/img/fight.jpg) no-repeat top center;
+}
+.new p {
+    background: url(/img/box.png) no-repeat top center;
+}
+.chimp {
+    clear: both;
+    margin: 20px 0;
+    padding-top: 20px;
+}
+.ordering {
+    margin-top: 40px;
+}
+.ordering h2 {
+    font-size: 300%;
+    font-weight: bold;
+    margin: 0 23px;
+    text-transform: uppercase;
+}
+.ordering p {
+    font-size: 200%;
+    line-height: 1.4;
+    margin: 10px 25px ;
+}
+
+
+.thanks {
+    margin: 150px auto 50px;
+    width: 840px;
+}
+.thanks h1 {
+    font-size: 300%;
+/*     text-align: center; */
+}
+.thanks p {
+    margin: 20px 2px;
+/*     text-align: center; */
+}
+.thanks a {
+    color: #f30;
+    text-decoration: none;
+}
