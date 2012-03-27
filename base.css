@@ -32,7 +32,7 @@ body > div {
     position: relative;
 }
 .intro h1 {
-    background: url(/img/logo.png) no-repeat 5px 0px;
+    background: url(/img/logo.png) no-repeat 2px 0px;
     display: block;
     font-size: 300%;
     margin: 10px;
