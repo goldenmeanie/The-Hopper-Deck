@@ -59,7 +59,7 @@ body > div {
     color: #000;
     display: block;
     height: 120px;
-    font-size: 140%;
+    font-size: 120%;
 /*     font-weight: bold; */
     line-height: 1.15;
     padding: 205px 10px 10px 10px;
@@ -68,6 +68,7 @@ body > div {
 }
 .intro p strong {
     color: #000;
+    font-size: 140%;
 /*     text-transform: uppercase; */
 }
 .intro div a:hover,
