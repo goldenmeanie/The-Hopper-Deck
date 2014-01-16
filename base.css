@@ -81,7 +81,8 @@ body > div {
 }
 .soldout a {
     background-image: url(/img/sold-out.png);
-    background-position: -115px -115px;
+    background-position: -25px -25px;
+    background-size: 50%;
     background-repeat: no-repeat;
 }
 .soldout a:hover {
