@@ -80,8 +80,8 @@ body > div {
     background: url(/img/murph-and-deck.jpg) no-repeat 0px 0px;
 }
 .soldout a {
-    background-image: url(/img/sold-out-small.png);
-    background-position: -75px -75px;
+    background-image: url(/img/sold-out.png);
+    background-position: -115px -115px;
     background-repeat: no-repeat;
 }
 .soldout a:hover {
