@@ -1,0 +1,95 @@
+/* elements */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #232323;
+  font-family: "helvetica neue", sans-serif;
+  line-height: 1.4em;
+}
+header {
+  color: white;
+  padding: .5em 1.5em;
+  h1 {
+    font-size: .75em;
+    text-align: center;
+  }
+}
+.alpha {
+  background: #343434;
+  padding: 2em 0 4em;
+  width: 100%;
+}
+.card {
+  border-radius: 12px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+
+  background: #fff;
+  border: 1px solid #999;
+  color: #343434;
+  height: 25em;
+  width: 18em;
+  h1 {
+    font-size: 250%;
+    margin: 2% 0 7%;
+    &:first-letter {
+      font-size: 120%;
+    }
+    &.red {
+      color: red;
+    }
+  }
+  h2 {
+    font-size: 300%;
+    padding: 2% 5%;
+    text-align: center;
+    width: 90%;
+  }
+  h3 {
+    font-size: 100%;
+    font-weight: normal;
+    font-style: italic;
+  }
+  p {
+    margin: 0 0 1em;
+  }
+}
+
+footer {
+  color: #fff;
+  padding: 1em 0 2em;
+  h1 {
+    font-size: 1.05em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-size: .65em;
+    font-weight: normal;
+    text-align: center;
+  }
+}
+/* html5 */
+header, footer, nav, article { display: block; }
+
+
+@media all and (max-width: 400px) {
+  .alpha {
+    padding: 0;
+  }
+  .card {
+    border-radius: 0;
+    padding: 4%;
+    width: 92%;
+  }
+}
+@media all and (min-width: 400px) {
+  .card {
+    margin: 10px auto;
+    padding: 20px;
+    // width: 350px;
+  }
+}
