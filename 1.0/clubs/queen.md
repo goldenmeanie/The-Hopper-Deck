@@ -1,6 +1,6 @@
 ---
 layout: card
-title: "Queen&clubs;"
+title: "Q&clubs;"
 workout: "Fran"
 suit: "Clubs"
 ---
