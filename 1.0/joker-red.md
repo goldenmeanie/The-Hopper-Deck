@@ -3,6 +3,7 @@ layout: card
 title: "Joker"
 workout: "Filthy Fifty"
 suit: "Red"
+custom-class: "joker"
 ---
 
 <h1>{{ page.title }}</h1>
